@@ -1,10 +1,10 @@
 const express = require('express');
 const app = express();
 
-const { quotes } = require('./data');
-const { getRandomElement } = require('./utils');
-
 const PORT = process.env.PORT || 4001;
+const apiRouter = require('./routes/index.routes')
+
+app.use('/api', apiRouter);
 
 app.use(express.static('public'));
 
